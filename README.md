@@ -212,12 +212,3 @@ npm run dev
 - Backend API: `http://127.0.0.1:5000`
 
 ---
-
-## 🎓 Interview Talking Points
-
-1. **Why in-memory caching?**
-   TheMealDB is an external third-party API. Repeated queries for common ingredients (e.g. `garlic` with 200+ results) could hit rate limits or cause network latency. By caching meal lookups with TTL, subsequent requests respond in `0ms`.
-2. **Why normalized string comparison instead of exact match?**
-   User inputs like `"tomatoes"` or `"chopped tomato"` should still match recipes requiring `"tomato"`. Normalization strips preparation prefixes and stems English plurals.
-3. **Why frequency-based recommendations over ML?**
-   For interview presentation, a frequency-based model is completely transparent, deterministic, and easily testable without requiring heavy ML libraries, training pipelines, or black-box inference.
